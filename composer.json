@@ -7,7 +7,7 @@
         "thethunderturner",
         "laravel-tmdb",
         "tmdb"
-    1],
+    ],
     "homepage": "https://github.com/thethunderturner/laravel-tmdb",
     "license": "MIT",
     "authors": [
