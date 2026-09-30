@@ -1,18 +1,19 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "vendor-name/skeleton",
-    "description": "A Laravel package skeleton.",
+    "name": "thethunderturner/laravel-tmdb",
+    "description": "A way to access TMDB from Laravel",
     "keywords": [
-        "vendor-name",
         "laravel",
-        "skeleton"
-    ],
-    "homepage": "https://github.com/vendor-name/skeleton",
+        "thethunderturner",
+        "laravel-tmdb",
+        "tmdb"
+    1],
+    "homepage": "https://github.com/thethunderturner/laravel-tmdb",
     "license": "MIT",
     "authors": [
         {
-            "name": "Author Name",
-            "email": "author@example.com",
+            "name": "Matthew Biskas",
+            "email": "matthewbiskas@gmail.com",
             "role": "Developer"
         }
     ],
@@ -22,10 +23,7 @@
     },
     "require-dev": {
         "larastan/larastan": "^3.9",
-        "laravel/agent-detector": "^2.0",
-        "laravel/chisel": "^0.1",
         "laravel/pint": "^1.29",
-        "laravel/prompts": "^0.3",
         "laravel/pao": "^1.0",
         "orchestra/testbench": "^10.0||^11.0",
         "pestphp/pest": "^4.6||^5.0",
@@ -35,24 +33,15 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/"
+            "LaravelTmdb\\LaravelTmdb\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+            "LaravelTmdb\\LaravelTmdb\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "post-install-cmd": [
-            "@php configure.php"
-        ],
-        "post-update-cmd": [
-            "@php configure.php"
-        ],
         "post-autoload-dump": [
             "@clear",
             "@prepare"
@@ -96,11 +85,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "LaravelTmdb\\LaravelTmdb\\LaravelTmdbServiceProvider"
+            ]
         }
     },
     "config": {
