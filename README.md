@@ -10,7 +10,7 @@
     <a href="https://packagist.org/packages/thethunderturner/laravel-tmdb"><img src="https://img.shields.io/packagist/dt/thethunderturner/laravel-tmdb.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
-A way to access TMDB from Laravel
+Laravel integration for [php-tmdb/api](https://github.com/php-tmdb/api).
 
 ## Installation
 
@@ -20,7 +20,17 @@ You can install the package via Composer:
 composer require thethunderturner/laravel-tmdb
 ```
 
-You may publish all of the package's resources at once:
+Set either credential in your application's `.env` file:
+
+```dotenv
+TMDB_API_KEY=your-api-key
+# Or use a TMDB API read access token:
+TMDB_BEARER_TOKEN=your-read-access-token
+```
+
+When both are set, the bearer token takes precedence. The client is created when first resolved, and requires one of these credentials.
+
+You may publish the package configuration:
 
 ```bash
 php artisan vendor:publish --tag="laravel-tmdb"
@@ -36,7 +46,23 @@ php artisan vendor:publish --tag="laravel-tmdb-config"
 
 ## Usage
 
-<!-- Add a basic usage example here. -->
+The service provider is discovered automatically. Inject the upstream client wherever you need TMDB data:
+
+```php
+use Tmdb\Client;
+
+final class MovieController
+{
+    public function show(Client $tmdb, int $id): array
+    {
+        return $tmdb->getMoviesApi()->getMovie($id);
+    }
+}
+```
+
+You can also call `app(\Tmdb\Client::class)` or use the `LaravelTmdb\LaravelTmdb\LaravelTmdb` facade. The package registers the request listeners needed by `php-tmdb/api` and resolves one shared client per Laravel application. To replace its PSR-18 HTTP transport, bind `Psr\Http\Client\ClientInterface` before resolving the TMDB client.
+
+The package's tests use an in memory HTTP response, so `composer test:unit` needs no TMDB credentials or network access. API calls and response models remain the responsibility of [`php-tmdb/api`](https://github.com/php-tmdb/api).
 
 ## Changelog
 
