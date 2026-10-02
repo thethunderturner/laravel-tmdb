@@ -14,6 +14,7 @@ class Movies
 
     /**
      * @description Get the top level details of a movie by ID.
+     * @link https://developer.themoviedb.org/reference/movie-details
      *
      * @throws ConnectionException
      * @throws RequestException
@@ -25,16 +26,19 @@ class Movies
 
     /**
      * @description Get the rating, watchlist and favourite status of an account.
+     * @link https://developer.themoviedb.org/reference/movie-account-states
      *
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function accountStates(int $movie_id, ?array $query): array {
+    public function accountStates(int $movie_id, ?array $query): array
+    {
         return $this->client->get("/movie/{$movie_id}/account_states", $query);
     }
 
     /**
      * @description Get the rating, watchlist and favourite status of an account.
+     * @link https://developer.themoviedb.org/reference/movie-alternative-titles
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -46,6 +50,7 @@ class Movies
 
     /**
      * @description Get the recent changes for a movie.
+     * @link https://developer.themoviedb.org/reference/movie-changes
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -56,6 +61,8 @@ class Movies
     }
 
     /**
+     * @link https://developer.themoviedb.org/reference/movie-credits
+     *
      * @throws RequestException
      * @throws ConnectionException
      */
@@ -65,6 +72,8 @@ class Movies
     }
 
     /**
+     * @link https://developer.themoviedb.org/reference/movie-external-ids
+     *
      * @throws RequestException
      * @throws ConnectionException
      */
@@ -75,6 +84,7 @@ class Movies
 
     /**
      * @description Get the images that belong to a movie.
+     * @link https://developer.themoviedb.org/reference/movie-images
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -85,6 +95,8 @@ class Movies
     }
 
     /**
+     * @link https://developer.themoviedb.org/reference/movie-keywords
+     *
      * @throws RequestException
      * @throws ConnectionException
      */
@@ -95,17 +107,19 @@ class Movies
 
     /**
      * @description Get the newest movie ID.
+     * @link https://developer.themoviedb.org/reference/movie-latest-id
      *
      * @throws RequestException
      * @throws ConnectionException
      */
     public function latest(): array
     {
-        return $this->client->get("/movie/latest");
+        return $this->client->get('/movie/latest');
     }
 
     /**
      * @description Get the lists that a movie has been added to.
+     * @link https://developer.themoviedb.org/reference/movie-lists
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -116,6 +130,8 @@ class Movies
     }
 
     /**
+     * @link https://developer.themoviedb.org/reference/movie-recommendations
+     *
      * @throws RequestException
      * @throws ConnectionException
      */
@@ -126,6 +142,7 @@ class Movies
 
     /**
      * @description Get the release dates and certifications for a movie.
+     * @link https://developer.themoviedb.org/reference/movie-release-dates
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -137,6 +154,7 @@ class Movies
 
     /**
      * @description Get the user reviews for a movie.
+     * @link https://developer.themoviedb.org/reference/movie-reviews
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -158,7 +176,8 @@ class Movies
     }
 
     /**
-     * Get the translations for a movie.
+     * @description Get the translations for a movie.
+     * @link https://developer.themoviedb.org/reference/movie-videos
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -169,7 +188,9 @@ class Movies
     }
 
     /**
-     * Get the translations for a movie.
+     * @description Get the list of streaming providers we have for a movie.
+     * @note Availability data provided by JustWatch!
+     * @link https://developer.themoviedb.org/reference/movie-watch-providers
      *
      * @throws RequestException
      * @throws ConnectionException

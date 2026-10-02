@@ -10,7 +10,7 @@
     <a href="https://packagist.org/packages/thethunderturner/laravel-tmdb"><img src="https://img.shields.io/packagist/dt/thethunderturner/laravel-tmdb.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
-Laravel integration for [php-tmdb/api](https://github.com/php-tmdb/api).
+Laravel integration for [TMDB API]([https://github.com/php-tmdb/api](https://developer.themoviedb.org/reference/getting-started)).
 
 ## Installation
 
@@ -23,12 +23,8 @@ composer require thethunderturner/laravel-tmdb
 Set either credential in your application's `.env` file:
 
 ```dotenv
-TMDB_API_KEY=your-api-key
-# Or use a TMDB API read access token:
 TMDB_BEARER_TOKEN=your-read-access-token
 ```
-
-When both are set, the bearer token takes precedence. The client is created when first resolved, and requires one of these credentials.
 
 You may publish the package configuration:
 
