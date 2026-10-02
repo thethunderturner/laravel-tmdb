@@ -2,7 +2,9 @@
 
 namespace LaravelTmdb\LaravelTmdb;
 
-class TMDB
+use Tmdb\Api\Movies;
+
+class LaravelTMDB
 {
     public function __construct(
         protected Movies $movies,
