@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelTmdb\LaravelTmdb\Endpoints\Movies;
 
 use Illuminate\Http\Client\ConnectionException;
@@ -42,7 +44,7 @@ class MovieLists
      */
     public function topRated(?array $query = []): array
     {
-        return $this->client->get('/movie/popular', $query);
+        return $this->client->get('/movie/top_rated', $query);
     }
 
     /**

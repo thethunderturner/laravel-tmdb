@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelTmdb\LaravelTmdb;
 
-use Tmdb\Api\Movies;
+use LaravelTmdb\LaravelTmdb\Endpoints\Movies\Movies;
 
 class LaravelTMDB
 {

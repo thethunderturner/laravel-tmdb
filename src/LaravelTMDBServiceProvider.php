@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelTmdb\LaravelTmdb;
 
 use Illuminate\Container\Container;
