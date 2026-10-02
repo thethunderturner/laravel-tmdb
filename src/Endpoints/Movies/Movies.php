@@ -197,6 +197,6 @@ class Movies
      */
     public function watchProviders(int $movie_id): array
     {
-        return $this->client->get("/movie/{$movie_id}/videos");
+        return $this->client->get("/movie/{$movie_id}/watch/providers");
     }
 }
