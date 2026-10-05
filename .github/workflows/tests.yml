@@ -41,14 +41,14 @@ jobs:
         uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, fileinfo, sqlite, pdo_sqlite, bcmath, intl
-          ini-values: error_reporting=E_ALL
+          extensions: dom, curl, libxml, mbstring, zip, fileinfo, sqlite, pdo_sqlite, bcmath, intl, ffi
+          ini-values: error_reporting=E_ALL, ffi.enable=true
           tools: composer:v2
           coverage: none
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer require --dev "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --no-scripts
           composer run prepare
 
@@ -62,10 +62,9 @@ jobs:
         if: runner.os != 'Windows'
         run: composer test:types
 
-      - name: Test Suite
+      - name: Test Suite (Serial)
+        run: composer test:serial
+
+      - name: Test Suite (Parallel)
         if: runner.os != 'Windows'
         run: composer test:unit
-
-      - name: Test Suite (Windows)
-        if: runner.os == 'Windows'
-        run: vendor/bin/pest
