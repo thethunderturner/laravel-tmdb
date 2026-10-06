@@ -21,7 +21,7 @@ class TvSeriesLIst
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function airingToday(?array $query): array
+    public function airingToday(array $query = []): array
     {
         return $this->client->get('/movie/airing_today', $query);
     }
@@ -33,7 +33,7 @@ class TvSeriesLIst
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function onTheAir(?array $query): array
+    public function onTheAir(array $query = []): array
     {
         return $this->client->get('/tv/on_the_air', $query);
     }
@@ -45,7 +45,7 @@ class TvSeriesLIst
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function popular(?array $query): array
+    public function popular(array $query = []): array
     {
         return $this->client->get('/tv/popular', $query);
     }
@@ -57,7 +57,7 @@ class TvSeriesLIst
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function topRated(?array $query): array
+    public function topRated(array $query = []): array
     {
         return $this->client->get('/tv/top_rated', $query);
     }

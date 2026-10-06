@@ -21,7 +21,7 @@ class Movies
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function details(int $id, ?array $query): array
+    public function details(int $id, array $query = []): array
     {
         return $this->client->get("/movie/{$id}", $query);
     }
@@ -33,7 +33,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function accountStates(int $movie_id, ?array $query): array
+    public function accountStates(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/account_states", $query);
     }
@@ -45,7 +45,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function alternativeTitles(int $movie_id, ?array $query): array
+    public function alternativeTitles(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/alternative_titles", $query);
     }
@@ -57,7 +57,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function changes(int $movie_id, ?array $query): array
+    public function changes(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/changes", $query);
     }
@@ -68,7 +68,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function credits(int $movie_id, ?array $query): array
+    public function credits(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/credits", $query);
     }
@@ -79,7 +79,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function externalIds(int $movie_id, ?array $query): array
+    public function externalIds(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/external_ids", $query);
     }
@@ -91,7 +91,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function images(int $movie_id, ?array $query): array
+    public function images(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/images", $query);
     }
@@ -102,7 +102,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function keywords(int $movie_id, ?array $query): array
+    public function keywords(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/keywords", $query);
     }
@@ -126,7 +126,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function lists(int $movie_id, ?array $query): array
+    public function lists(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/lists", $query);
     }
@@ -137,7 +137,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function recommendations(int $movie_id, ?array $query): array
+    public function recommendations(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/recommendations", $query);
     }
@@ -161,7 +161,7 @@ class Movies
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function reviews(int $movie_id, ?array $query): array
+    public function reviews(int $movie_id, array $query = []): array
     {
         return $this->client->get("/movie/{$movie_id}/reviews", $query);
     }

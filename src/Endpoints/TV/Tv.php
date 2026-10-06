@@ -21,7 +21,7 @@ class Tv
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function details(int $series_id, ?array $query): array
+    public function details(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}", $query);
     }
@@ -33,7 +33,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function accountStates(int $series_id, ?array $query): array
+    public function accountStates(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/account_states", $query);
     }
@@ -45,7 +45,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function alternativeTitles(int $series_id, ?array $query): array
+    public function alternativeTitles(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/alternative_titles", $query);
     }
@@ -57,7 +57,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function changes(int $series_id, ?array $query): array
+    public function changes(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/changes", $query);
     }
@@ -68,7 +68,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function credits(int $series_id, ?array $query): array
+    public function credits(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/credits", $query);
     }
@@ -79,7 +79,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function externalIds(int $series_id, ?array $query): array
+    public function externalIds(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/external_ids", $query);
     }
@@ -91,7 +91,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function images(int $series_id, ?array $query): array
+    public function images(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/images", $query);
     }
@@ -102,7 +102,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function keywords(int $series_id, ?array $query): array
+    public function keywords(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/keywords", $query);
     }
@@ -126,7 +126,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function lists(int $series_id, ?array $query): array
+    public function lists(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/lists", $query);
     }
@@ -137,7 +137,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function recommendations(int $series_id, ?array $query): array
+    public function recommendations(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/recommendations", $query);
     }
@@ -161,7 +161,7 @@ class Tv
      * @throws RequestException
      * @throws ConnectionException
      */
-    public function reviews(int $series_id, ?array $query): array
+    public function reviews(int $series_id, array $query = []): array
     {
         return $this->client->get("/tv/{$series_id}/reviews", $query);
     }
