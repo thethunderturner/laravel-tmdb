@@ -21,7 +21,7 @@ class Trending
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function all(string $time_window, ?array $query): array
+    public function all(string $time_window = 'day', ?array $query = []): array
     {
         return $this->client->get("/trending/all/{$time_window}", $query);
     }
@@ -33,7 +33,7 @@ class Trending
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function movies(string $time_window, ?array $query): array
+    public function movies(string $time_window = 'day', ?array $query = []): array
     {
         return $this->client->get("/trending/movie/{$time_window}", $query);
     }
@@ -45,7 +45,7 @@ class Trending
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function people(string $time_window, ?array $query): array
+    public function people(string $time_window = 'day', ?array $query = []): array
     {
         return $this->client->get("/trending/person/{$time_window}", $query);
     }
@@ -57,7 +57,7 @@ class Trending
      * @throws ConnectionException
      * @throws RequestException
      */
-    public function tv(string $time_window, ?array $query): array
+    public function tv(string $time_window = 'day', ?array $query = []): array
     {
         return $this->client->get("/trending/tv/{$time_window}", $query);
     }
