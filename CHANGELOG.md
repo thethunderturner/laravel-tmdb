@@ -1,6 +1,13 @@
 # Release Notes
 
-## [Unreleased](https://github.com/thethunderturner/laravel-tmdb/compare/v1.2.2...HEAD)
+## [Unreleased](https://github.com/thethunderturner/laravel-tmdb/compare/v1.2.3...HEAD)
+
+## [v1.2.3](https://github.com/thethunderturner/laravel-tmdb/compare/v1.2.2...v1.2.3) - 2026-10-29
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+Adding missing links to MovieLists.php
+
+**Full Changelog**: https://github.com/thethunderturner/laravel-tmdb/compare/v1.2.2...v1.2.3
 
 ## [v1.2.2](https://github.com/thethunderturner/laravel-tmdb/compare/v1.2.0...v1.2.2) - 2026-10-29
 
