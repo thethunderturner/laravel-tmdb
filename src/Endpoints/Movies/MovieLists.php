@@ -16,6 +16,7 @@ class MovieLists
 
     /**
      * @description Get a list of movies that are currently in theatres.
+     * @link https://developer.themoviedb.org/reference/movie-now-playing-list
      *
      * @throws ConnectionException
      * @throws RequestException
@@ -27,6 +28,7 @@ class MovieLists
 
     /**
      * @description Get a list of movies ordered by popularity.
+     * @link https://developer.themoviedb.org/reference/movie-popular-list
      *
      * @throws RequestException
      * @throws ConnectionException
@@ -38,6 +40,7 @@ class MovieLists
 
     /**
      * @description Get a list of movies ordered by rating.
+     * @link https://developer.themoviedb.org/reference/movie-top-rated-list
      *
      * @throws ConnectionException
      * @throws RequestException
@@ -49,6 +52,7 @@ class MovieLists
 
     /**
      * @description Get a list of movies that are being released soon.
+     * @link https://developer.themoviedb.org/reference/movie-upcoming-list
      *
      * @throws RequestException
      * @throws ConnectionException
